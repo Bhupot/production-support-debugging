@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# VS Code local configuration
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment / credentials
+.env
+.env.*
+*.pem
+*.key
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp

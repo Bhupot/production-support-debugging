@@ -1,6 +1,6 @@
 -- Unexpected Snowflake Compute Cost
 
--- /* Review recent expensive queries */
+-- Review recent expensive queries
 SELECT
     user_name,
     query_text,
