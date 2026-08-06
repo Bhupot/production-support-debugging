@@ -15,6 +15,11 @@ venv/
 .env.*
 *.pem
 *.key
+.agents
+.claude
+
+# Streamlit secrets
+.streamlit/secrets.toml
 
 # Logs
 *.log
