@@ -141,7 +141,6 @@ processed substantially more data than intended.
 [View full incident report](sql/incidents/incident_05_cost_spike.md)
 
 # Troubleshooting Philosophy
-
 When troubleshooting an unfamiliar production pipeline, I generally work from
 the simplest assumptions outward:
 
@@ -160,7 +159,6 @@ This avoids changing transformation logic before determining whether the
 actual failure occurred upstream.
 
 # Key Skills Demonstrated
-
 - Production pipeline troubleshooting
 - Root-cause analysis
 - Snowflake SQL
@@ -173,3 +171,54 @@ actual failure occurred upstream.
 - Incident documentation
 - Preventive engineering
 - Git / GitHub workflow
+
+# Streamlit Diagnostics Dashboard
+The project includes an interactive Streamlit dashboard connected to Snowflake.
+
+The dashboard converts the incident investigations into reusable monitoring
+views.
+
+## Dashboard Capabilities
+- Pipeline freshness and SLA monitoring
+- Staging and curated row counts
+- Duplicate business-key detection
+- NULL provider-ID detection
+- Unmatched provider lookup detection
+- Event-volume trends
+- Event status and type distributions
+- Snowflake warehouse-credit monitoring
+- Expensive-query analysis
+- Raw-data filtering and CSV export
+
+## Dashboard Preview
+![Streamlit Pipeline Overview](images/streamlit_overview.png)
+
+## Run Locally
+Create and activate a Python environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a local Snowflake connection file:
+
+```text
+.streamlit/secrets.toml
+```
+
+Run the application:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+## Security
+The Snowflake connection file is excluded from Git through `.gitignore`.
+No credentials or production data are stored in this repository.
